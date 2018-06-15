@@ -2,60 +2,404 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Intagram Photo Feed</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Instagram photo feed with Bootstrap</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 </head>
-<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    	<div class="container">
-        	<a class="navbar-brand" href="#">Website Brand</a>
-        	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            	<span class="navbar-toggler-icon"></span>
-        	</button>
-        	<div class="collapse navbar-collapse" id="navbarNavDropdown">
-            	<ul class="navbar-nav ml-auto">
-                	<li class="nav-item active">
-                		<!-- Button trigger modal -->
-                    	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button>
 
-                    		<!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  						<div class="modal-dialog" role="document">
-    						<div class="modal-content">
-      						<div class="modal-header">
-        						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          						<span aria-hidden="true">&times;</span>
-        						</button>
-      						</div>
-      						<div class="modal-body">
-        						...
-      						</div>
-      						<div class="modal-footer">
-        						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        						<button type="button" class="btn btn-primary">Save changes</button>
-      						</div>
-    						</div>
-  						</div>
-						</div>
-                	</li>
-                	<li class="dropdown show">
-                    	<a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">S</a>
-                    	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        	<a class="dropdown-item" href="#">Action</a>
-                        	<a class="dropdown-item" href="#">Another action</a>
-                        	<a class="dropdown-item" href="#">Something else here</a>
-                        	<div class="dropdown-divider"></div>
-    							<a class="dropdown-item" href="#">Log out</a>
-  							</div>
-                    	</div>
-                	</li>
-            	</ul>
-        	</div>
+<body class="bg-secondary">
+		
+    <div class="container-fluid bg-light fluid-top text-center sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                    <!-- Just an image -->
+              <a class="navbar-brand" href="#">
+                    <img src="img/instagram.svg" width="24" height="24" alt="Logo_instagram" class="d-inline-block align-top"> Instagram</a>
+                    <!-- Fin logo de la empresa -->
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item active">
+
+                            <!-- Button trigger modal -->
+                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Create new post</button>
+
+                                
+                          </li>
+                                    <!-- Dropdow Menu -->
+                          <li class="dropdown show">
+                              <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="img/cog.svg" width="17" height="17" alt="menu-o" class="d-inline-block align-top align-middle mb-1">   
+                                </a>
+                              
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Log out</a>
+                      </div>
+                                    <!-- Dropdow Menu End -->
+                          </li>
+                      </ul>
+                  </div>
+            </nav>
         </div>
-    </nav>
+    </div>
+
+                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                            <div class="modal-body pb-4">
+                                              <form>
+                                                  <div class="form-group">
+                                                    <textarea class="form-control border-dark" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                                  </div>
+                                                </form>
+                                                <div class="float-left">  
+                                                    <button type="button" class="btn btn-light btn-sm border">
+                                                        <img src="img/camera.svg" width="17" height="17" alt="menu-o" class="d-inline-block align-middle mb-0"> 
+                                                    </button>
+                                                    <button type="button" class="btn btn-light btn-sm border">
+                                                        <img src="img/map-marker-alt.svg" width="17" height="17" alt="menu-o" class="d-inline-block align-middle mb-0"> 
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-light btn-sm border" data-dismiss="modal">Cancel</button>
+                                              <button type="button" class="btn btn-success btn-sm">Publish</button>
+                                            </div>
+                                      </div>
+                                    </div>
+                                </div>
+                <!-- End of Modal -->
+
+                        <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-4 mb-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+              
+            <img class="card-img-top" src="img/bosque.jpg" alt="Card image cap">
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+            <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+              
+            <img class="card-img-top" src="img/C1NeOe4WQAALp3s.jpg" alt="Card image cap">
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+                    <!--No agregues divs-->
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+                    <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+              
+            <img class="card-img-top" src="img/DWcLfndXcAEdkko.jpg" alt="Card image cap">
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+                    <!--No agregues divs-->
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+                    <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+            
+            <img class="card-img-top" src="img/tumblr_nhmapasotD1rbcubso3_1280.jpg" alt="Card image cap">
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+                    <!--No agregues divs-->
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+                    <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+             
+            <img class="card-img-top" src="img/tumblr_nimzuq0mQS1s13wj2o2_1280.jpg" alt="Card image cap">
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+                    <!--No agregues divs-->
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+                    <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+              
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="854" height="480" src="https://www.youtube.com/embed/kOts-yZsu8A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+                    <!--No agregues divs-->
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+                    <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+            
+            <img class="card-img-top" src="img/DUPGK2zVwAUHRNn.jpg" alt="Card image cap">
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+                    <!--No agregues divs-->
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+                    <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+              
+            <img class="card-img-top" src="img/DbEeqtkWsAEwY2V.jpg" alt="Card image cap">
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+                    <!--No agregues divs-->
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+                    <!-- Card -->
+        <div class="container-fluid col-sm-7 mx-auto">
+
+            <div class="card mx-auto d-block my-5" style=";">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="">
+                            <div><h4 class="mb-0 d-inline-block align-top">Header</h4></div>
+                        </div>
+                        <div class="ml-auto pl-5 pr-0">
+                            <div class="text-muted"><h5 class="mb-0">14/12</h5></div>
+                        </div>
+                    </div>
+                </div>
+             
+            <img class="card-img-top" src="img/tumblr_naiveuocSJ1qlq9poo9_1280.jpg" alt="Card image cap">
+
+                <div class="card-body py-0">
+                    <h5 class="card-title my-2">Card title</h5>
+                    <p class="card-text"><h5 class="font-weight-normal">Some quick example text to build on the card title and make up the bulk of the card's content.</h5></p>
+
+                    <div class="form-group row mb-0 px-4 mb-1">
+                    <!--No agregues divs-->
+                            <a class="form-group like-button col-1 px-0 my-1 mx-auto align-middle" href="#">
+                                <img src="img/heart.svg" width="17" height="17" alt="Like" class="align-top mb-1 align-middle mx-auto">
+                            </a>
+                            <input class="form-control col-sm-10 col-10 pl-1 border-light align-middle d-inline-block" type="text" placeholder="Comment...">
+                            <a class="form-group menu-button col-sm-1 col-1 px-1 my-1 mx-auto align-middle" href="#">
+                                <img src="img/ellipsis-v.svg" width="18" height="18" alt="menu-o" class="align-top mb-1 align-middle">
+                            </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+            <!-- Fin de Card -->
+
 
 
 
@@ -63,8 +407,8 @@
 
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>
